@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Survay 1</h1>
+
+    <div class="question active" id="q1">
+        <h3>Are you male or female?</h3>
+        <button onclick="nextQuestion(2)">Male</button>
+        <button onclick="nextQuestion(2)">Female</button>
+    </div>
+
+    <div class="question" id="q2">
+        <h3>Do you prefer Coffee or Tea?</h3>
+        <button onclick="nextQuestion(3)">Coffee</button>
+        <button onclick="nextQuestion(3)">Tea</button>
+    </div>
+
+    <div class="question" id="q3">
+        <h3>Do you like Coding?</h3>
+        <button onclick="finishSurvay()">Yes</button>
+        <button onclick="finishSurvay()">No</button>
+    </div>
+
+    <div id="thankYou" style="display:none;">
+        <h3>Thanks for taking this Survay</h3>
+    </div>
+
+    <script>
+        function nextQuestion(nextId) {
+            document.querySelector('.question.active').classList.remove('active');
+            document.getElementById('q' + nextId).classList.add('active');
+        }
+
+        function finishSurvay() {
+            document.querySelector('.question.active').classList.remove('active');
+            document.getElementById('thankYou').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
